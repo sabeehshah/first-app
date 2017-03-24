@@ -1,0 +1,25 @@
+<div *ngIf="player">
+
+
+<a [routerLink]="['/players']">Go Back</a>
+<br />
+<h2 class="page-header">{{player.name}}</h2>
+<div class="row">
+  <div class="col-md-4">
+    <img style="width:100%" class="thumbnail" src="{{imageUrl}}">
+  </div>
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item">Name: {{player.name}}</li>
+      <li class="list-group-item">Age: {{player.age}}</li>
+      <li class="list-group-item">Role: {{player.role}}</li>
+      <li class="list-group-item">Address: {{player.address}}</li>
+      <li class="list-group-item">Phone: {{player.phone}}</li>
+      <li class="list-group-item">Total Runs: {{player.runs}}</li>
+      <li class="list-group-item">Total Wickets: {{player.wickets}}</li>
+    </ul>
+  </div>
+  <a class="btn btn-default" [routerLink]="['/edit-player/'+player.$key]">Edit</a>
+  <a (click)="onDeleteClick()" class="btn btn-danger" >Delete</a>
+</div>
+</div>
